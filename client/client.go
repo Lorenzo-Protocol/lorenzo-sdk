@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	bbn "github.com/Lorenzo-Protocol/lorenzo/app"
+	lorenzo "github.com/Lorenzo-Protocol/lorenzo/app"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
 	"go.uber.org/zap"
 
@@ -42,7 +42,7 @@ func New(cfg *config.LorenzoConfig, logger *zap.Logger) (*Client, error) {
 	}
 
 	// Create tmp Lorenzo app to retrieve and register codecs
-	encCfg := bbn.MakeEncodingConfig()
+	encCfg := lorenzo.MakeEncodingConfig()
 
 	cosmosConfig := cfg.ToCosmosProviderConfig()
 	provider, err := cosmosConfig.NewProvider(
