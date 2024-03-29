@@ -2,9 +2,10 @@ package config
 
 import (
 	"fmt"
-	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
 	"net/url"
 	"time"
+
+	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
 )
 
 // LorenzoConfig defines configuration for the Lorenzo client

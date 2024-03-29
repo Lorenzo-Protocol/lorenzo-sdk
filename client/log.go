@@ -2,11 +2,12 @@ package client
 
 import (
 	"fmt"
+	"os"
+	"time"
+
 	zaplogfmt "github.com/jsternberg/zap-logfmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"os"
-	"time"
 )
 
 func newRootLogger(format string, debug bool) (*zap.Logger, error) {

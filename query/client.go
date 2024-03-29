@@ -3,7 +3,6 @@ package query
 import (
 	"context"
 	"fmt"
-	"github.com/cosmos/cosmos-sdk/types/query"
 	"strconv"
 	"time"
 
@@ -11,6 +10,7 @@ import (
 	rpcclient "github.com/cometbft/cometbft/rpc/client"
 	"github.com/cosmos/cosmos-sdk/client"
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
+	"github.com/cosmos/cosmos-sdk/types/query"
 	"google.golang.org/grpc/metadata"
 )
 
