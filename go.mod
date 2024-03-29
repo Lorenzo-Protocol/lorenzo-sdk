@@ -1,4 +1,4 @@
-module github.com/Lorenzo-Protocol/rpc-client
+module github.com/Lorenzo-Protocol/lorenzo-sdk
 
 go 1.21
 

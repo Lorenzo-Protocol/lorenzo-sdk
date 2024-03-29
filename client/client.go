@@ -8,8 +8,8 @@ import (
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
 	"go.uber.org/zap"
 
-	"github.com/Lorenzo-Protocol/rpc-client/config"
-	"github.com/Lorenzo-Protocol/rpc-client/query"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/query"
 )
 
 type Client struct {

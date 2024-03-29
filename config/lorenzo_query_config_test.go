@@ -3,7 +3,7 @@ package config_test
 import (
 	"testing"
 
-	"github.com/Lorenzo-Protocol/rpc-client/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 	"github.com/stretchr/testify/require"
 )
 

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Lorenzo-Protocol/rpc-client/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 	rpcclient "github.com/cometbft/cometbft/rpc/client"
 	"github.com/cosmos/cosmos-sdk/client"
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"

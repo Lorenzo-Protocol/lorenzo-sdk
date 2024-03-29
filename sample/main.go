@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Lorenzo-Protocol/rpc-client/client"
-	"github.com/Lorenzo-Protocol/rpc-client/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/client"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 	"os"
 	"time"
 )
