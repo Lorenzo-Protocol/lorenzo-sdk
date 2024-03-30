@@ -1,5 +1,5 @@
 ## Sample
-sample for using rpc-client to interact with Lorenzo
+sample for using lorenzo-sdk to interact with Lorenzo node.
 
 ## How to use
 
