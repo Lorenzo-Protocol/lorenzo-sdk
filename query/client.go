@@ -6,12 +6,13 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 	rpcclient "github.com/cometbft/cometbft/rpc/client"
 	"github.com/cosmos/cosmos-sdk/client"
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"google.golang.org/grpc/metadata"
+
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 )
 
 // QueryClient is a client that can only perform queries to a Lorenzo node

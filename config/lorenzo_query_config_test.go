@@ -3,8 +3,9 @@ package config_test
 import (
 	"testing"
 
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 	"github.com/stretchr/testify/require"
+
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
 )
 
 // TestLorenzoQueryConfig ensures that the default Lorenzo query config is valid
