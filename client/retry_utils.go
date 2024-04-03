@@ -1,10 +1,11 @@
 package client
 
 import (
-	"cosmossdk.io/errors"
-	"github.com/avast/retry-go/v4"
 	"strings"
 	"time"
+
+	"cosmossdk.io/errors"
+	"github.com/avast/retry-go/v4"
 )
 
 // Variables used for retries
