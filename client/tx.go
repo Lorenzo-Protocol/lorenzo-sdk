@@ -7,6 +7,7 @@ import (
 
 	"cosmossdk.io/errors"
 	btclctypes "github.com/Lorenzo-Protocol/lorenzo/x/btclightclient/types"
+	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/x/btcstaking/types"
 	"github.com/avast/retry-go/v4"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
@@ -137,6 +138,6 @@ func (c *Client) InsertHeaders(ctx context.Context, msg *btclctypes.MsgInsertHea
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
 
-// TODO: implement necessary message invocations here
-// - MsgInconsistencyEvidence
-// - MsgStallingEvidence
+func (c *Client) CreateBTCStakingWithBTCProof(ctx context.Context, msg *btcstakingtypes.MsgCreateBTCStaking) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
