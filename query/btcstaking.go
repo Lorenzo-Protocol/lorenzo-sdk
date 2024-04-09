@@ -17,6 +17,19 @@ func (c *QueryClient) QueryBTCStaking(f func(ctx context.Context, queryClient ty
 	return f(ctx, queryClient)
 }
 
+func (c *QueryClient) QueryBTCStakingParams() (*types.QueryParamsResponse, error) {
+	var resp *types.QueryParamsResponse
+	err := c.QueryBTCStaking(func(ctx context.Context, queryClient types.QueryClient) error {
+		req := &types.QueryParamsRequest{}
+
+		var err error
+		resp, err = queryClient.Params(ctx, req)
+		return err
+	})
+
+	return resp, err
+}
+
 func (c *QueryClient) GetBTCStakingRecord(txHash string) (*types.QueryStakingRecordResponse, error) {
 	txHashBytes, err := hex.DecodeString(txHash)
 	if err != nil {
