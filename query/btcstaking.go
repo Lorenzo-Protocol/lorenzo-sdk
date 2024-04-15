@@ -2,8 +2,9 @@ package query
 
 import (
 	"context"
-	"encoding/hex"
+
 	"github.com/Lorenzo-Protocol/lorenzo/x/btcstaking/types"
+	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/cosmos/cosmos-sdk/client"
 )
 
@@ -31,7 +32,7 @@ func (c *QueryClient) QueryBTCStakingParams() (*types.QueryParamsResponse, error
 }
 
 func (c *QueryClient) GetBTCStakingRecord(txHash string) (*types.QueryStakingRecordResponse, error) {
-	txHashBytes, err := hex.DecodeString(txHash)
+	txHashBytes, err := chainhash.NewHashFromStr(txHash)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +40,7 @@ func (c *QueryClient) GetBTCStakingRecord(txHash string) (*types.QueryStakingRec
 	var resp *types.QueryStakingRecordResponse
 	err = c.QueryBTCStaking(func(ctx context.Context, queryClient types.QueryClient) error {
 		req := &types.QueryStakingRecordRequest{
-			TxHash: txHashBytes,
+			TxHash: txHashBytes[:],
 		}
 
 		var err error
