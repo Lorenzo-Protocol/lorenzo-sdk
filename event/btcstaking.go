@@ -87,13 +87,13 @@ func NewBurnEvent(event abci_types.Event) (*BurnEvent, error) {
 		err              error
 	)
 	for _, attr := range event.Attributes {
-		value := strings.Trim(attr.Value, "\"")
 		if attr.Key == "amount" {
-			err = json.Unmarshal([]byte(value), &amount)
+			err = json.Unmarshal([]byte(attr.Value), &amount)
 			if err != nil {
 				return nil, err
 			}
 		}
+		value := strings.Trim(attr.Value, "\"")
 		if attr.Key == "btc_target_address" {
 			btcTargetAddress = value
 		}
