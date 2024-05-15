@@ -89,8 +89,7 @@ func NewBurnEvent(event abci_types.Event) (*BurnEvent, error) {
 	for _, attr := range event.Attributes {
 		value := strings.Trim(attr.Value, "\"")
 		if attr.Key == "amount" {
-			var coin sdk.Coin
-			err = json.Unmarshal([]byte(value), &coin)
+			err = json.Unmarshal([]byte(value), &amount)
 			if err != nil {
 				return nil, err
 			}
