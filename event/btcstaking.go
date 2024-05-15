@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
-	"strconv"
+	"math/big"
 	"strings"
 
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
@@ -26,9 +26,9 @@ type (
 	}
 
 	MintEvent struct {
-		TxHash     string `json:"tx_hash"`
-		Amount     uint64 `json:"amount"`
-		MintToAddr string `json:"mint_to_addr"`
+		TxHash     string  `json:"tx_hash"`
+		Amount     big.Int `json:"amount"`
+		MintToAddr string  `json:"mint_to_addr"`
 	}
 
 	MintRecordValue struct {
@@ -62,9 +62,9 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 	if err != nil {
 		return nil, err
 	}
-	amount, err := strconv.ParseUint(value.Amount, 10, 64)
-	if err != nil {
-		return nil, err
+	amount, ok := new(big.Int).SetString(value.Amount, 10)
+	if !ok {
+		return nil, errors.New("parse mint event error: invalid amount")
 	}
 	mintToAddrBytes, err := base64.StdEncoding.DecodeString(value.MintToAddr)
 	if err != nil {
@@ -74,7 +74,7 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 
 	return &MintEvent{
 		TxHash:     txHash.String(),
-		Amount:     amount * 1e10,
+		Amount:     *new(big.Int).Mul(amount, big.NewInt(1e10)),
 		MintToAddr: mintToAddr.String(),
 	}, nil
 }
