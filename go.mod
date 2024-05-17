@@ -6,12 +6,13 @@ toolchain go1.21.4
 
 require (
 	cosmossdk.io/errors v1.0.1
-	github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240516045252-6d9aa198bb0e
+	github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240517025956-0a52d3e36f78
 	github.com/avast/retry-go/v4 v4.5.1
 	github.com/btcsuite/btcd/chaincfg/chainhash v1.1.0
 	github.com/cometbft/cometbft v0.37.2
 	github.com/cosmos/cosmos-sdk v0.47.4
 	github.com/cosmos/relayer/v2 v2.4.1
+	github.com/ethereum/go-ethereum v1.10.26
 	github.com/jsternberg/zap-logfmt v1.3.0
 	github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b
 	github.com/stretchr/testify v1.8.4
@@ -78,7 +79,6 @@ require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/dvsekhvalnov/jose2go v1.6.0 // indirect
 	github.com/edsrzf/mmap-go v1.0.0 // indirect
-	github.com/ethereum/go-ethereum v1.10.26 // indirect
 	github.com/evmos/ethermint v0.22.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
