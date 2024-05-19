@@ -25,10 +25,18 @@ func (c *QueryClient) QueryBTCStakingParams() (*types.QueryParamsResponse, error
 
 		var err error
 		resp, err = queryClient.Params(ctx, req)
-		return err
+		if err != nil {
+			return err
+		}
+
+		return nil
 	})
 
-	return resp, err
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
 }
 
 func (c *QueryClient) GetBTCStakingRecord(txHash string) (*types.QueryStakingRecordResponse, error) {
