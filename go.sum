@@ -215,6 +215,8 @@ github.com/Lorenzo-Protocol/ethermint v0.22.0-rpc-client-1 h1:MnYOjaXsn1XkcsLyiT
 github.com/Lorenzo-Protocol/ethermint v0.22.0-rpc-client-1/go.mod h1:JEhGmVj5rZX5bTfOqh3nltE2N6+qMI4HVNV2vW6PpOQ=
 github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240517025956-0a52d3e36f78 h1:d+5P0rqlIavzkDoVEJwiZAshqRwCGDDNLSAsjfRGaL0=
 github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240517025956-0a52d3e36f78/go.mod h1:hoPkZ826BbJn7B3cAi22c+0mMGSosq6Z9RCAv7D1oKs=
+github.com/Lorenzo-Protocol/lorenzo v1.0.1-0.20240523071722-0977ddcceb03 h1:DcDPrpV5mFbnlwRmF1sCubLStMdGZ66LB81ZhJKKVWQ=
+github.com/Lorenzo-Protocol/lorenzo v1.0.1-0.20240523071722-0977ddcceb03/go.mod h1:Q3zcJtkm03in/LE7m2QmkvT6wWB8gIhx3sZh82Xe7w4=
 github.com/Microsoft/go-winio v0.6.1 h1:9/kr64B9VUZrLm5YYwbGtUJnMgqWVOdUAXu6Migciow=
 github.com/Microsoft/go-winio v0.6.1/go.mod h1:LRdKpFKfdobln8UmuiYcKPot9D2v6svN5+sAH+4kjUM=
 github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 h1:TngWCqHvy9oXAN6lEVMRuU21PR1EtLVZJmdB18Gu3Rw=

@@ -6,7 +6,7 @@ toolchain go1.21.4
 
 require (
 	cosmossdk.io/errors v1.0.1
-	github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240517025956-0a52d3e36f78
+	github.com/Lorenzo-Protocol/lorenzo v1.0.1-0.20240523071722-0977ddcceb03
 	github.com/avast/retry-go/v4 v4.5.1
 	github.com/btcsuite/btcd/chaincfg/chainhash v1.1.0
 	github.com/cometbft/cometbft v0.37.5
