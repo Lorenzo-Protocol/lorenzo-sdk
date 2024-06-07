@@ -26,15 +26,19 @@ type (
 	}
 
 	MintEvent struct {
-		TxHash     string  `json:"tx_hash"`
-		Amount     big.Int `json:"amount"`
-		MintToAddr string  `json:"mint_to_addr"`
+		TxHash          string  `json:"tx_hash"`
+		Amount          big.Int `json:"amount"`
+		MintToAddr      string  `json:"mint_to_addr"`
+		BtcReceiverName string  `json:"btc_receiver_name"`
+		BtcReceiverAddr string  `json:"btc_receiver_addr"`
 	}
 
 	MintRecordValue struct {
-		TxHash     string `json:"tx_hash"`
-		Amount     string `json:"amount"`
-		MintToAddr string `json:"mint_to_addr"`
+		TxHash          string `json:"tx_hash"`
+		Amount          string `json:"amount"`
+		MintToAddr      string `json:"mint_to_addr"`
+		BtcReceiverName string `json:"btc_receiver_name"`
+		BtcReceiverAddr string `json:"btc_receiver_addr"`
 	}
 )
 
@@ -73,9 +77,11 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 	mintToAddr := ethereum.BytesToAddress(mintToAddrBytes)
 
 	return &MintEvent{
-		TxHash:     txHash.String(),
-		Amount:     *new(big.Int).Mul(amount, big.NewInt(1e10)),
-		MintToAddr: mintToAddr.String(),
+		TxHash:          txHash.String(),
+		Amount:          *new(big.Int).Mul(amount, big.NewInt(1e10)),
+		MintToAddr:      mintToAddr.String(),
+		BtcReceiverName: value.BtcReceiverName,
+		BtcReceiverAddr: value.BtcReceiverAddr,
 	}, nil
 }
 
