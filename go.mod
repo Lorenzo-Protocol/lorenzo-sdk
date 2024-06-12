@@ -6,7 +6,7 @@ toolchain go1.21.4
 
 require (
 	cosmossdk.io/errors v1.0.1
-	github.com/Lorenzo-Protocol/lorenzo v1.0.1-0.20240523071722-0977ddcceb03
+	github.com/Lorenzo-Protocol/lorenzo v1.2.0
 	github.com/avast/retry-go/v4 v4.5.1
 	github.com/btcsuite/btcd/chaincfg/chainhash v1.1.0
 	github.com/cometbft/cometbft v0.37.5
@@ -228,7 +228,7 @@ replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
 	// slay the dragonberry
 	github.com/confio/ics23/go => github.com/cosmos/cosmos-sdk/ics23/go v0.8.0
-	github.com/evmos/ethermint => github.com/Lorenzo-Protocol/ethermint v0.22.0-rpc-client-1
+	github.com/evmos/ethermint => github.com/Lorenzo-Protocol/ethermint v0.22.0-lorenzo-sdk-2
 
 	// Fix upstream GHSA-h395-qcrw-5vmq vulnerability.
 	// TODO Remove it: https://github.com/cosmos/cosmos-sdk/issues/10409

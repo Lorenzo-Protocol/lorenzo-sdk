@@ -211,12 +211,10 @@ github.com/ChainSafe/go-schnorrkel v1.0.0 h1:3aDA67lAykLaG1y3AOjs88dMxC88PgUuHRr
 github.com/ChainSafe/go-schnorrkel v1.0.0/go.mod h1:dpzHYVxLZcp8pjlV+O+UR8K0Hp/z7vcchBSbMBEhCw4=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
-github.com/Lorenzo-Protocol/ethermint v0.22.0-rpc-client-1 h1:MnYOjaXsn1XkcsLyiTBFC7lDRLfx/LhaSm0ZkJ8PNmM=
-github.com/Lorenzo-Protocol/ethermint v0.22.0-rpc-client-1/go.mod h1:JEhGmVj5rZX5bTfOqh3nltE2N6+qMI4HVNV2vW6PpOQ=
-github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240517025956-0a52d3e36f78 h1:d+5P0rqlIavzkDoVEJwiZAshqRwCGDDNLSAsjfRGaL0=
-github.com/Lorenzo-Protocol/lorenzo v0.0.0-20240517025956-0a52d3e36f78/go.mod h1:hoPkZ826BbJn7B3cAi22c+0mMGSosq6Z9RCAv7D1oKs=
-github.com/Lorenzo-Protocol/lorenzo v1.0.1-0.20240523071722-0977ddcceb03 h1:DcDPrpV5mFbnlwRmF1sCubLStMdGZ66LB81ZhJKKVWQ=
-github.com/Lorenzo-Protocol/lorenzo v1.0.1-0.20240523071722-0977ddcceb03/go.mod h1:Q3zcJtkm03in/LE7m2QmkvT6wWB8gIhx3sZh82Xe7w4=
+github.com/Lorenzo-Protocol/ethermint v0.22.0-lorenzo-sdk-2 h1:ADu+SxPiTUJObXJjZobR8SHClMWdVNV9HNIR4fasfVw=
+github.com/Lorenzo-Protocol/ethermint v0.22.0-lorenzo-sdk-2/go.mod h1:JEhGmVj5rZX5bTfOqh3nltE2N6+qMI4HVNV2vW6PpOQ=
+github.com/Lorenzo-Protocol/lorenzo v1.2.0 h1:C/259Jv1/9sbh4kS7CSJ5N+hhAD7QqIIAQRVZbzkom8=
+github.com/Lorenzo-Protocol/lorenzo v1.2.0/go.mod h1:8fsf+uB5lDeZJSchJTVZcGj0Gm8ubBTQoq0jtJhNv+o=
 github.com/Microsoft/go-winio v0.6.1 h1:9/kr64B9VUZrLm5YYwbGtUJnMgqWVOdUAXu6Migciow=
 github.com/Microsoft/go-winio v0.6.1/go.mod h1:LRdKpFKfdobln8UmuiYcKPot9D2v6svN5+sAH+4kjUM=
 github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 h1:TngWCqHvy9oXAN6lEVMRuU21PR1EtLVZJmdB18Gu3Rw=
