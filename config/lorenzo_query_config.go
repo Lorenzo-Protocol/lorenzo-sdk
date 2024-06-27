@@ -8,8 +8,8 @@ import (
 
 // LorenzoConfig defines configuration for the Lorenzo query client
 type LorenzoQueryConfig struct {
-	RPCAddr string        `mapstructure:"rpc-addr"`
-	Timeout time.Duration `mapstructure:"timeout"`
+	RPCAddr string        `mapstructure:"rpc-addr" toml:"rpc_addr"`
+	Timeout time.Duration `mapstructure:"timeout" toml:"rpc_timeout"`
 }
 
 func (cfg *LorenzoQueryConfig) Validate() error {
