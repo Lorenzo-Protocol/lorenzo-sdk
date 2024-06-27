@@ -14,8 +14,9 @@ import (
 )
 
 const (
-	EventTypeMint = "lorenzo.btcstaking.v1.EventBTCStakingCreated"
-	EventTypeBurn = "lorenzo.btcstaking.v1.EventBurnCreated"
+	EventTypeMint       = "lorenzo.btcstaking.v1.EventBTCStakingCreated"
+	EventTypeBurn       = "lorenzo.btcstaking.v1.EventBurnCreated"
+	Bech32PrefixAccAddr = "lrz"
 )
 
 type (
@@ -49,6 +50,7 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 			record = attr.Value
 		}
 	}
+
 	if record == "" {
 		return nil, errors.New("invalid mint event attributes, missing record key")
 	}
@@ -58,18 +60,22 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	txHashBytes, err := base64.StdEncoding.DecodeString(value.TxHash)
 	if err != nil {
 		return nil, err
 	}
+
 	txHash, err := chainhash.NewHash(txHashBytes)
 	if err != nil {
 		return nil, err
 	}
+
 	amount, ok := new(big.Int).SetString(value.Amount, 10)
 	if !ok {
 		return nil, errors.New("parse mint event error: invalid amount")
 	}
+
 	mintToAddrBytes, err := base64.StdEncoding.DecodeString(value.MintToAddr)
 	if err != nil {
 		return nil, err
@@ -99,16 +105,19 @@ func NewBurnEvent(event abci_types.Event) (*BurnEvent, error) {
 				return nil, err
 			}
 		}
+
 		value := strings.Trim(attr.Value, "\"")
+
 		if attr.Key == "btc_target_address" {
 			btcTargetAddress = value
 		}
+
 		if attr.Key == "signer" {
-			address, err := sdk.AccAddressFromBech32(value)
+			address, err := sdk.GetFromBech32(value, Bech32PrefixAccAddr)
 			if err != nil {
 				return nil, err
 			}
-			signer = ethereum.BytesToAddress(address.Bytes()).String()
+			signer = ethereum.BytesToAddress(address).String()
 		}
 	}
 
