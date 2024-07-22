@@ -27,19 +27,21 @@ type (
 	}
 
 	MintEvent struct {
-		TxHash          string  `json:"tx_hash"`
-		Amount          big.Int `json:"amount"`
-		MintToAddr      string  `json:"mint_to_addr"`
-		BtcReceiverName string  `json:"btc_receiver_name"`
-		BtcReceiverAddr string  `json:"btc_receiver_addr"`
+		TxHash       string  `json:"tx_hash"`
+		Amount       big.Int `json:"amount"`
+		ReceiverAddr string  `json:"receiver_addr"`
+		AgentName    string  `json:"agent_name"`
+		AgentBtcAddr string  `json:"agent_btc_addr"`
+		ChainId      uint32  `json:"chain_id"`
 	}
 
 	MintRecordValue struct {
-		TxHash          string `json:"tx_hash"`
-		Amount          string `json:"amount"`
-		MintToAddr      string `json:"mint_to_addr"`
-		BtcReceiverName string `json:"btc_receiver_name"`
-		BtcReceiverAddr string `json:"btc_receiver_addr"`
+		TxHash       string `json:"tx_hash"`
+		Amount       string `json:"amount"`
+		ReceiverAddr string `json:"receiver_addr,omitempty"`
+		AgentName    string `json:"agent_name,omitempty"`
+		AgentBtcAddr string `json:"agent_btc_addr,omitempty"`
+		ChainId      uint32 `json:"chain_id,omitempty"`
 	}
 )
 
@@ -76,18 +78,19 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 		return nil, errors.New("parse mint event error: invalid amount")
 	}
 
-	mintToAddrBytes, err := base64.StdEncoding.DecodeString(value.MintToAddr)
+	receiverAddrBytes, err := base64.StdEncoding.DecodeString(value.ReceiverAddr)
 	if err != nil {
 		return nil, err
 	}
-	mintToAddr := ethereum.BytesToAddress(mintToAddrBytes)
+	receiverAddr := ethereum.BytesToAddress(receiverAddrBytes)
 
 	return &MintEvent{
-		TxHash:          txHash.String(),
-		Amount:          *new(big.Int).Mul(amount, big.NewInt(1e10)),
-		MintToAddr:      mintToAddr.String(),
-		BtcReceiverName: value.BtcReceiverName,
-		BtcReceiverAddr: value.BtcReceiverAddr,
+		TxHash:       txHash.String(),
+		Amount:       *new(big.Int).Mul(amount, big.NewInt(1e10)),
+		ReceiverAddr: receiverAddr.String(),
+		AgentName:    value.AgentName,
+		AgentBtcAddr: value.AgentBtcAddr,
+		ChainId:      value.ChainId,
 	}, nil
 }
 
