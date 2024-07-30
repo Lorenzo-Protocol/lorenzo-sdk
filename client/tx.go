@@ -6,6 +6,7 @@ import (
 	"sync"
 
 	"cosmossdk.io/errors"
+	agenttypes "github.com/Lorenzo-Protocol/lorenzo/x/agent/types"
 	btclctypes "github.com/Lorenzo-Protocol/lorenzo/x/btclightclient/types"
 	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/x/btcstaking/types"
 	"github.com/avast/retry-go/v4"
@@ -139,5 +140,17 @@ func (c *Client) InsertHeaders(ctx context.Context, msg *btclctypes.MsgInsertHea
 }
 
 func (c *Client) CreateBTCStakingWithBTCProof(ctx context.Context, msg *btcstakingtypes.MsgCreateBTCStaking) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) AddAgent(ctx context.Context, msg *agenttypes.MsgAddAgent) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) EditAgent(ctx context.Context, msg *agenttypes.MsgEditAgent) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) RemoveAgent(ctx context.Context, msg *agenttypes.MsgRemoveAgent) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
