@@ -34,6 +34,10 @@ func (c *Client) SendMsgToMempool(ctx context.Context, msg sdk.Msg) error {
 // SendMsgsToMempool sends a set of messages to the mempool.
 // It does not wait for the messages to be included.
 func (c *Client) SendMsgsToMempool(ctx context.Context, msgs []sdk.Msg) error {
+	if len(msgs) == 0 {
+		return fmt.Errorf("empty message set provided")
+	}
+
 	relayerMsgs := ToProviderMsgs(msgs)
 	if err := retry.Do(func() error {
 		var sendMsgErr error

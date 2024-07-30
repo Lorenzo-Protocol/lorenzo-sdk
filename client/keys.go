@@ -6,6 +6,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	"github.com/juju/fslock"
+	"go.uber.org/zap"
 )
 
 func (c *Client) GetAddr() (string, error) {
@@ -35,6 +36,16 @@ func (c *Client) accessKeyWithLock(accessFunc func()) error {
 	if err := lock.Lock(); err != nil {
 		return fmt.Errorf("failed to acquire file system lock (%s): %w", lockFilePath, err)
 	}
+
+	defer func() {
+		if r := recover(); r != nil {
+			// unlock and release access
+			if err := lock.Unlock(); err != nil {
+				c.logger.Error("error unlocking file system lock", zap.Error(err))
+			}
+			panic(r)
+		}
+	}()
 
 	// trigger function that access keyring
 	accessFunc()
