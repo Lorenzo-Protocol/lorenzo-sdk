@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/v2/config"
 )
 
 // TestLorenzoQueryConfig ensures that the default Lorenzo query config is valid

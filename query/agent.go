@@ -2,7 +2,8 @@ package query
 
 import (
 	"context"
-	"github.com/Lorenzo-Protocol/lorenzo/x/agent/types"
+
+	"github.com/Lorenzo-Protocol/lorenzo/v2/x/agent/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/types/query"
 )
@@ -41,22 +42,4 @@ func (c *QueryClient) Agent(agentId uint64) (*types.QueryAgentResponse, error) {
 	})
 
 	return resp, err
-}
-
-func (c *QueryClient) AgentAdmin() (string, error) {
-	var resp *types.QueryAdminResponse
-	err := c.QueryAgent(func(ctx context.Context, queryClient types.QueryClient) error {
-		var err error
-		resp, err = queryClient.Admin(ctx, &types.QueryAdminRequest{})
-		return err
-	})
-
-	if err != nil {
-		return "", err
-	}
-	if resp == nil {
-		return "", nil
-	}
-
-	return resp.Admin, nil
 }

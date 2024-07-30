@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/client"
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/v2/client"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/v2/config"
 )
 
 func main() {

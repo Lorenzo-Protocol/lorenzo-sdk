@@ -6,9 +6,9 @@ import (
 	"sync"
 
 	"cosmossdk.io/errors"
-	agenttypes "github.com/Lorenzo-Protocol/lorenzo/x/agent/types"
-	btclctypes "github.com/Lorenzo-Protocol/lorenzo/x/btclightclient/types"
-	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/x/btcstaking/types"
+	agenttypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/agent/types"
+	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btclightclient/types"
+	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btcstaking/types"
 	"github.com/avast/retry-go/v4"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
