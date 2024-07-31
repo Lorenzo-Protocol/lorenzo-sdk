@@ -9,6 +9,7 @@ import (
 	agenttypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/agent/types"
 	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btclightclient/types"
 	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btcstaking/types"
+	plantypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/plan/types"
 	"github.com/avast/retry-go/v4"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
@@ -156,5 +157,41 @@ func (c *Client) EditAgent(ctx context.Context, msg *agenttypes.MsgEditAgent) (*
 }
 
 func (c *Client) RemoveAgent(ctx context.Context, msg *agenttypes.MsgRemoveAgent) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+/**************************
+*******	Plan Module ********
+************************/
+
+func (c *Client) UpgradePlan(ctx context.Context, msg *plantypes.MsgUpgradePlan) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) CreatePlan(ctx context.Context, msg *plantypes.MsgCreatePlan) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) SetPlanMerkleRoot(ctx context.Context, msg *plantypes.MsgSetMerkleRoot) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) Claims(ctx context.Context, msg *plantypes.MsgClaims) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) CreateYAT(ctx context.Context, msg *plantypes.MsgCreateYAT) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) UpdatePlanStatus(ctx context.Context, msg *plantypes.MsgUpdatePlanStatus) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) SetMinter(ctx context.Context, msg *plantypes.MsgSetMinter) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) RemoveMinter(ctx context.Context, msg *plantypes.MsgRemoveMinter) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
