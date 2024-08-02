@@ -11,19 +11,19 @@ import (
 // LorenzoConfig defines configuration for the Lorenzo client
 // adapted from https://github.com/strangelove-ventures/lens/blob/v0.5.1/client/config.go
 type LorenzoConfig struct {
-	Key            string        `mapstructure:"key"`
-	ChainID        string        `mapstructure:"chain-id"`
-	RPCAddr        string        `mapstructure:"rpc-addr"`
-	AccountPrefix  string        `mapstructure:"account-prefix"`
-	KeyringBackend string        `mapstructure:"keyring-backend"`
-	GasAdjustment  float64       `mapstructure:"gas-adjustment"`
-	GasPrices      string        `mapstructure:"gas-prices"`
-	KeyDirectory   string        `mapstructure:"key-directory"`
-	Debug          bool          `mapstructure:"debug"`
-	Timeout        time.Duration `mapstructure:"timeout"`
-	BlockTimeout   time.Duration `mapstructure:"block-timeout"`
-	OutputFormat   string        `mapstructure:"output-format"`
-	SignModeStr    string        `mapstructure:"sign-mode"`
+	Key            string        `mapstructure:"key" toml:"key"`
+	ChainID        string        `mapstructure:"chain-id" toml:"chain-id"`
+	RPCAddr        string        `mapstructure:"rpc-addr" toml:"rpc-addr"`
+	AccountPrefix  string        `mapstructure:"account-prefix" toml:"account-prefix"`
+	KeyringBackend string        `mapstructure:"keyring-backend" toml:"keyring-backend"`
+	GasAdjustment  float64       `mapstructure:"gas-adjustment" toml:"gas-adjustment"`
+	GasPrices      string        `mapstructure:"gas-prices" toml:"gas-prices"`
+	KeyDirectory   string        `mapstructure:"key-directory" toml:"key-directory"`
+	Debug          bool          `mapstructure:"debug" toml:"debug"`
+	Timeout        time.Duration `mapstructure:"timeout" toml:"timeout"`
+	BlockTimeout   time.Duration `mapstructure:"block-timeout" toml:"block-timeout"`
+	OutputFormat   string        `mapstructure:"output-format" toml:"output-format"`
+	SignModeStr    string        `mapstructure:"sign-mode" toml:"sign-mode"`
 }
 
 func (cfg *LorenzoConfig) Validate() error {
