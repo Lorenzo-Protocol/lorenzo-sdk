@@ -7,6 +7,7 @@ import (
 
 	"cosmossdk.io/errors"
 	agenttypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/agent/types"
+	bnblightclienttypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/bnblightclient/types"
 	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btclightclient/types"
 	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btcstaking/types"
 	plantypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/plan/types"
@@ -148,6 +149,10 @@ func (c *Client) CreateBTCStakingWithBTCProof(ctx context.Context, msg *btcstaki
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
 
+func (c *Client) CreateBTCBStaking(ctx context.Context, msg *btcstakingtypes.MsgCreateBTCBStaking) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
 func (c *Client) AddAgent(ctx context.Context, msg *agenttypes.MsgAddAgent) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
@@ -193,5 +198,13 @@ func (c *Client) SetMinter(ctx context.Context, msg *plantypes.MsgSetMinter) (*p
 }
 
 func (c *Client) RemoveMinter(ctx context.Context, msg *plantypes.MsgRemoveMinter) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) BNBUploadHeaders(ctx context.Context, msg *bnblightclienttypes.MsgUploadHeaders) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) BNBUpdateHeader(ctx context.Context, msg *bnblightclienttypes.MsgUpdateHeader) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
