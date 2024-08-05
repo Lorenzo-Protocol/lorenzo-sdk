@@ -18,7 +18,7 @@ func (c *QueryClient) QueryBNBLightClient(f func(ctx context.Context, client typ
 	return f(ctx, queryClient)
 }
 
-func (c *QueryClient) BNBHeader(number uint64) (*types.QueryHeaderResponse, error) {
+func (c *QueryClient) BNBHeader(number uint64) (*types.Header, error) {
 	var resp *types.QueryHeaderResponse
 	err := c.QueryBNBLightClient(func(ctx context.Context, queryClient types.QueryClient) error {
 		var err error
@@ -29,10 +29,14 @@ func (c *QueryClient) BNBHeader(number uint64) (*types.QueryHeaderResponse, erro
 		return err
 	})
 
-	return resp, err
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.Header, err
 }
 
-func (c *QueryClient) BNBHeaderByHash(hash string) (*types.QueryHeaderByHashResponse, error) {
+func (c *QueryClient) BNBHeaderByHash(hash string) (*types.Header, error) {
 	var resp *types.QueryHeaderByHashResponse
 	err := c.QueryBNBLightClient(func(ctx context.Context, queryClient types.QueryClient) error {
 		var err error
@@ -43,10 +47,14 @@ func (c *QueryClient) BNBHeaderByHash(hash string) (*types.QueryHeaderByHashResp
 		return err
 	})
 
-	return resp, err
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.Header, err
 }
 
-func (c *QueryClient) BNBLatestHeader() (*types.QueryLatestHeaderResponse, error) {
+func (c *QueryClient) BNBLatestHeader() (*types.Header, error) {
 	var resp *types.QueryLatestHeaderResponse
 	err := c.QueryBNBLightClient(func(ctx context.Context, queryClient types.QueryClient) error {
 		var err error
@@ -55,7 +63,11 @@ func (c *QueryClient) BNBLatestHeader() (*types.QueryLatestHeaderResponse, error
 		return err
 	})
 
-	return resp, err
+	if err != nil {
+		return nil, err
+	}
+
+	return &resp.Header, err
 }
 
 func (c *QueryClient) BNBLightClientParams() (*types.QueryParamsResponse, error) {
