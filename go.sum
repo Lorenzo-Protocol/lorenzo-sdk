@@ -219,6 +219,8 @@ github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-20240802103318-22bd87418c97 h1:JGf
 github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-20240802103318-22bd87418c97/go.mod h1:gmpp3EUP+MAqZueAtVHef9NpxIQT3GmWPxOOle08VrU=
 github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-20240804095124-ad6d0b97009b h1:HaMIksydTAMlN5d8fxrPdk1sMtm243UsvvRtuvJfyVg=
 github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-20240804095124-ad6d0b97009b/go.mod h1:gmpp3EUP+MAqZueAtVHef9NpxIQT3GmWPxOOle08VrU=
+github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-rc2.0.20240808035442-9ced5b10bf5d h1:9G8e4Ro8OOh+BTezZ1y6PP7rghwIdd7pp2AznKodFgk=
+github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-rc2.0.20240808035442-9ced5b10bf5d/go.mod h1:gmpp3EUP+MAqZueAtVHef9NpxIQT3GmWPxOOle08VrU=
 github.com/Microsoft/go-winio v0.6.1 h1:9/kr64B9VUZrLm5YYwbGtUJnMgqWVOdUAXu6Migciow=
 github.com/Microsoft/go-winio v0.6.1/go.mod h1:LRdKpFKfdobln8UmuiYcKPot9D2v6svN5+sAH+4kjUM=
 github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 h1:TngWCqHvy9oXAN6lEVMRuU21PR1EtLVZJmdB18Gu3Rw=

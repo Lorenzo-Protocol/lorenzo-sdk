@@ -5,7 +5,7 @@ go 1.21.12
 require (
 	cosmossdk.io/errors v1.0.1
 	cosmossdk.io/math v1.3.0
-	github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-20240804095124-ad6d0b97009b
+	github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0-rc2.0.20240808035442-9ced5b10bf5d
 	github.com/avast/retry-go/v4 v4.5.1
 	github.com/btcsuite/btcd/chaincfg/chainhash v1.1.0
 	github.com/cometbft/cometbft v0.37.5

@@ -2,10 +2,10 @@ package query
 
 import (
 	"context"
-	"github.com/ethereum/go-ethereum/common"
 
 	"github.com/Lorenzo-Protocol/lorenzo/v2/x/bnblightclient/types"
 	"github.com/cosmos/cosmos-sdk/client"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 func (c *QueryClient) QueryBNBLightClient(f func(ctx context.Context, client types.QueryClient) error) error {
