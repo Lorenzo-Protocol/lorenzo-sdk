@@ -32,16 +32,18 @@ type (
 		ReceiverAddr string  `json:"receiver_addr"`
 		AgentName    string  `json:"agent_name"`
 		AgentBtcAddr string  `json:"agent_btc_addr"`
-		ChainId      uint32  `json:"chain_id"`
+		ChainId      *uint32 `json:"chain_id"`
+		PlanId       *uint32 `json:"plan_id"`
 	}
 
 	MintRecordValue struct {
-		TxHash       string `json:"tx_hash"`
-		Amount       string `json:"amount"`
-		ReceiverAddr string `json:"receiver_addr,omitempty"`
-		AgentName    string `json:"agent_name,omitempty"`
-		AgentBtcAddr string `json:"agent_btc_addr,omitempty"`
-		ChainId      uint32 `json:"chain_id,omitempty"`
+		TxHash       string  `json:"tx_hash"`
+		Amount       string  `json:"amount"`
+		ReceiverAddr string  `json:"receiver_addr,omitempty"`
+		AgentName    string  `json:"agent_name,omitempty"`
+		AgentBtcAddr string  `json:"agent_btc_addr,omitempty"`
+		ChainId      *uint32 `json:"chain_id,omitempty"`
+		PlanId       *uint32 `json:"plan_id,omitempty"`
 	}
 )
 
@@ -91,6 +93,7 @@ func NewMintEvent(event abci_types.Event) (*MintEvent, error) {
 		AgentName:    value.AgentName,
 		AgentBtcAddr: value.AgentBtcAddr,
 		ChainId:      value.ChainId,
+		PlanId:       value.PlanId,
 	}, nil
 }
 
