@@ -10,6 +10,7 @@ import (
 	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btclightclient/types"
 	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btcstaking/types"
 	plantypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/plan/types"
+	tokentypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/token/types"
 	"github.com/avast/retry-go/v4"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
@@ -193,5 +194,31 @@ func (c *Client) SetMinter(ctx context.Context, msg *plantypes.MsgSetMinter) (*p
 }
 
 func (c *Client) RemoveMinter(ctx context.Context, msg *plantypes.MsgRemoveMinter) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+// ======= Token Module =========
+
+func (c *Client) RegisterCoin(ctx context.Context, msg *tokentypes.MsgRegisterCoin) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) RegisterERC20(ctx context.Context, msg *tokentypes.MsgRegisterERC20) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) ToggleConversion(ctx context.Context, msg *tokentypes.MsgToggleConversion) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) TokenUpdateParams(ctx context.Context, msg *tokentypes.MsgUpdateParams) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) ConvertCoin(ctx context.Context, msg *tokentypes.MsgConvertCoin) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) ConvertERC20(ctx context.Context, msg *tokentypes.MsgConvertERC20) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
