@@ -1,11 +1,11 @@
-module github.com/Lorenzo-Protocol/lorenzo-sdk/v2
+module github.com/Lorenzo-Protocol/lorenzo-sdk/v3
 
 go 1.21.12
 
 require (
 	cosmossdk.io/errors v1.0.1
 	cosmossdk.io/math v1.3.0
-	github.com/Lorenzo-Protocol/lorenzo/v2 v2.0.0
+	github.com/Lorenzo-Protocol/lorenzo/v3 v3.0.0-rc2
 	github.com/avast/retry-go/v4 v4.5.1
 	github.com/btcsuite/btcd/chaincfg/chainhash v1.1.0
 	github.com/cometbft/cometbft v0.37.5

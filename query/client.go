@@ -12,7 +12,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/v2/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/v3/config"
 )
 
 // QueryClient is a client that can only perform queries to a Lorenzo node

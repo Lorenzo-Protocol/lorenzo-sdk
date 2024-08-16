@@ -4,12 +4,12 @@ import (
 	"context"
 	"time"
 
-	lorenzo "github.com/Lorenzo-Protocol/lorenzo/v2/app"
+	lorenzo "github.com/Lorenzo-Protocol/lorenzo/v3/app"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
 	"go.uber.org/zap"
 
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/v2/config"
-	"github.com/Lorenzo-Protocol/lorenzo-sdk/v2/query"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/v3/config"
+	"github.com/Lorenzo-Protocol/lorenzo-sdk/v3/query"
 )
 
 type Client struct {

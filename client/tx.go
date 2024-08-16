@@ -6,11 +6,12 @@ import (
 	"sync"
 
 	"cosmossdk.io/errors"
-	agenttypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/agent/types"
-	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btclightclient/types"
-	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btcstaking/types"
-	plantypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/plan/types"
-	tokentypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/token/types"
+	agenttypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/agent/types"
+	bnblightclienttypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/bnblightclient/types"
+	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/btclightclient/types"
+	btcstakingtypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/btcstaking/types"
+	plantypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/plan/types"
+	tokentypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/token/types"
 	"github.com/avast/retry-go/v4"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/relayer/v2/relayer/chains/cosmos"
@@ -220,5 +221,19 @@ func (c *Client) ConvertCoin(ctx context.Context, msg *tokentypes.MsgConvertCoin
 }
 
 func (c *Client) ConvertERC20(ctx context.Context, msg *tokentypes.MsgConvertERC20) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+// ======= BNB light client Module =========
+
+func (c *Client) BNBUploadHeaders(ctx context.Context, msg *bnblightclienttypes.MsgUploadHeaders) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) BNBUpdateHeader(ctx context.Context, msg *bnblightclienttypes.MsgUpdateHeader) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
+
+func (c *Client) BNBUpdateParams(ctx context.Context, msg *btcstakingtypes.MsgUpdateParams) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }

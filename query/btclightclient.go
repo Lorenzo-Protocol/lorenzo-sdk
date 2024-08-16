@@ -3,7 +3,7 @@ package query
 import (
 	"context"
 
-	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/btclightclient/types"
+	btclctypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/btclightclient/types"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/cosmos/cosmos-sdk/client"
 	sdkquerytypes "github.com/cosmos/cosmos-sdk/types/query"

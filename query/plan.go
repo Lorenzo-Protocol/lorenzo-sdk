@@ -4,7 +4,7 @@ import (
 	"context"
 	"cosmossdk.io/math"
 
-	plantypes "github.com/Lorenzo-Protocol/lorenzo/v2/x/plan/types"
+	plantypes "github.com/Lorenzo-Protocol/lorenzo/v3/x/plan/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/types/query"
 )
