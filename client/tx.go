@@ -237,3 +237,7 @@ func (c *Client) BNBUpdateHeader(ctx context.Context, msg *bnblightclienttypes.M
 func (c *Client) BNBUpdateParams(ctx context.Context, msg *btcstakingtypes.MsgUpdateParams) (*pv.RelayerTxResponse, error) {
 	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
 }
+
+func (c *Client) CreateBTCBStaking(ctx context.Context, msg *btcstakingtypes.MsgCreateBTCBStaking) (*pv.RelayerTxResponse, error) {
+	return c.ReliablySendMsg(ctx, msg, []*errors.Error{}, []*errors.Error{})
+}
